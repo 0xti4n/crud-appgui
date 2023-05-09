@@ -145,16 +145,10 @@ impl GUI {
     pub fn build(&mut self) {
         self.filter_input.set_trigger(CallbackTrigger::Changed);
         self.filter_input.emit(self.sender, Message::Filter);
-
         self.list_browser.emit(self.sender, Message::Select);
-
-        //self.sender.send(Message::Filter);
-
         self.create_button.emit(self.sender, Message::Create);
-
         self.update_button.emit(self.sender, Message::Update);
         self.update_button.deactivate();
-
         self.delete_button.emit(self.sender, Message::Delete);
         self.delete_button.deactivate();
 
